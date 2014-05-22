@@ -29,5 +29,68 @@ There are several things I’ll need to do.
 This project is taken directly from Kaggle, where it's listed as the Acquire Valued Shoppers Challenge. The dataset has about 350 million rows, 300k shoppers, and about 20 dimensions. 
 
 #### Links
-. The data has already been curated and is available on Kaggle:  https://www.kaggle.com/c/acquire-valued-shoppers-challenge
-. ROC methodology:  http://en.wikipedia.org/wiki/Receiver_operating_characteristic
+. The data has already been curated and is available on Kaggle.  CSVs and meta info about the data here:  https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data
+
+———————
+#### Data description (copied from the site, for easy reference)
+
+##### Relational files
+. transactions.csv - contains transaction history for all customers for a period of at least 1 year prior to their offered incentive
+. trainHistory.csv - contains the incentive offered to each customer and information about the behavioral response to the offer
+. testHistory.csv - contains the incentive offered to each customer but does not include their response (you are predicting the repeater column for each id in this file)
+. offers.csv - contains information about the offers
+
+NOTE:  For this project, I’ll ignore testHistory.csv, and divide trainHistory into train and test sections for the purpose of building and testing models.  testHistory.csv contains the test data for the Kaggle competition, and doesn’t include the target being predicted, so it doesn’t help me.
+
+##### Fields
+. history
+id - A unique id representing a customer
+chain - An integer representing a store chain
+offer - An id representing a certain offer
+market - An id representing a geographical region
+repeattrips - The number of times the customer made a repeat purchase
+repeater - A boolean, equal to repeattrips > 0
+offerdate - The date a customer received the offer
+
+.. sample
+id,chain,offer,market,repeattrips,repeater,offerdate
+86246,205,1208251,34,5,t,2013-04-24
+86252,205,1197502,34,16,t,2013-03-27
+12682470,18,1197502,11,0,f,2013-03-28
+12996040,15,1197502,9,0,f,2013-03-25
+13089312,15,1204821,9,0,f,2013-04-01
+
+. transactions
+id - see above
+chain - see above
+dept - An aggregate grouping of the Category (e.g. water)
+category - The product category (e.g. sparkling water)
+company - An id of the company that sells the item
+brand - An id of the brand to which the item belongs
+date - The date of purchase
+productsize - The amount of the product purchase (e.g. 16 oz of water)
+productmeasure - The units of the product purchase (e.g. ounces)
+purchasequantity - The number of units purchased
+purchaseamount - The dollar amount of the purchase
+
+.. sample
+<pending>
+
+. offers
+offer - see above
+category - see above
+quantity - The number of units one must purchase to get the discount
+company - see above
+offervalue - The dollar value of the offer
+brand - see above
+
+.. sample
+offer,category,quantity,company,offervalue,brand
+1190530,9115,1,108500080,5,93904
+1194044,9909,1,107127979,1,6732
+1197502,3203,1,106414464,0.75,13474
+1198271,5558,1,107120272,1.5,5072
+1198272,5558,1,107120272,1.5,5072
+
+The transactions file can be joined to the history file by (id,chain). The history file can be joined to the offers file by (offer). The transactions file can be joined to the offers file by (category, brand, company). A negative value in productquantity and purchaseamount indicates a return.
+———————
