@@ -37,13 +37,12 @@ This project is taken directly from Kaggle, where it's listed as the Acquire Val
 ##### Relational files
 * transactions.csv - contains transaction history for all customers for a period of at least 1 year prior to their offered incentive
 * trainHistory.csv - contains the incentive offered to each customer and information about the behavioral response to the offer
-* testHistory.csv - contains the incentive offered to each customer but does not include their response (you are predicting the repeater column for each id in this file)
 * offers.csv - contains information about the offers
 
-NOTE:  For this project, I’ll ignore testHistory.csv, and divide trainHistory into train and test sections for the purpose of building and testing models.  testHistory.csv contains the test data for the Kaggle competition, and doesn’t include the target being predicted, so it doesn’t help me.
-
 ##### Fields
+
 HISTORY
+
 1. id - A unique id representing a customer
 2. chain - An integer representing a store chain
 3. offer - An id representing a certain offer
@@ -52,15 +51,8 @@ HISTORY
 6. repeater - A boolean, equal to repeattrips > 0
 7. offerdate - The date a customer received the offer
 
-.. sample
-id,chain,offer,market,repeattrips,repeater,offerdate
-86246,205,1208251,34,5,t,2013-04-24
-86252,205,1197502,34,16,t,2013-03-27
-12682470,18,1197502,11,0,f,2013-03-28
-12996040,15,1197502,9,0,f,2013-03-25
-13089312,15,1204821,9,0,f,2013-04-01
-
 TRANSACTIONS
+
 1. id - see above
 2. chain - see above
 3. dept - An aggregate grouping of the Category (e.g. water)
@@ -73,24 +65,14 @@ TRANSACTIONS
 10. purchasequantity - The number of units purchased
 11. purchaseamount - The dollar amount of the purchase
 
-.. sample
-<pending>
-
 OFFERS
+
 1. offer - see above
 2. category - see above
 3. quantity - The number of units one must purchase to get the discount
 4. company - see above
 5. offervalue - The dollar value of the offer
 6. brand - see above
-
-.. sample
-offer,category,quantity,company,offervalue,brand
-1190530,9115,1,108500080,5,93904
-1194044,9909,1,107127979,1,6732
-1197502,3203,1,106414464,0.75,13474
-1198271,5558,1,107120272,1.5,5072
-1198272,5558,1,107120272,1.5,5072
 
 The transactions file can be joined to the history file by (id,chain). The history file can be joined to the offers file by (offer). The transactions file can be joined to the offers file by (category, brand, company). A negative value in productquantity and purchaseamount indicates a return.
 ———————
