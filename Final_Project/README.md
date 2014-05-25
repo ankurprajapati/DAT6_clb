@@ -32,7 +32,7 @@ This project is taken directly from Kaggle, where it's listed as the Acquire Val
 * The data has already been curated and is available on Kaggle.  CSVs and meta info about the data here:  https://www.kaggle.com/c/acquire-valued-shoppers-challenge/data
 
 ———————
-#### Data description (copied from the site, for easy reference)
+#### Data description (for reference)
 
 ##### Relational files
 * transactions.csv - contains transaction history for all customers for a period of at least 1 year prior to their offered incentive
@@ -43,7 +43,7 @@ This project is taken directly from Kaggle, where it's listed as the Acquire Val
 NOTE:  For this project, I’ll ignore testHistory.csv, and divide trainHistory into train and test sections for the purpose of building and testing models.  testHistory.csv contains the test data for the Kaggle competition, and doesn’t include the target being predicted, so it doesn’t help me.
 
 ##### Fields
-* history
+HISTORY
 1. id - A unique id representing a customer
 2. chain - An integer representing a store chain
 3. offer - An id representing a certain offer
@@ -60,29 +60,29 @@ id,chain,offer,market,repeattrips,repeater,offerdate
 12996040,15,1197502,9,0,f,2013-03-25
 13089312,15,1204821,9,0,f,2013-04-01
 
-* transactions
-id - see above
-chain - see above
-dept - An aggregate grouping of the Category (e.g. water)
-category - The product category (e.g. sparkling water)
-company - An id of the company that sells the item
-brand - An id of the brand to which the item belongs
-date - The date of purchase
-productsize - The amount of the product purchase (e.g. 16 oz of water)
-productmeasure - The units of the product purchase (e.g. ounces)
-purchasequantity - The number of units purchased
-purchaseamount - The dollar amount of the purchase
+TRANSACTIONS
+1. id - see above
+2. chain - see above
+3. dept - An aggregate grouping of the Category (e.g. water)
+4. category - The product category (e.g. sparkling water)
+5. company - An id of the company that sells the item
+6. brand - An id of the brand to which the item belongs
+7. date - The date of purchase
+8. productsize - The amount of the product purchase (e.g. 16 oz of water)
+9. productmeasure - The units of the product purchase (e.g. ounces)
+10. purchasequantity - The number of units purchased
+11. purchaseamount - The dollar amount of the purchase
 
 .. sample
 <pending>
 
-* offers
-offer - see above
-category - see above
-quantity - The number of units one must purchase to get the discount
-company - see above
-offervalue - The dollar value of the offer
-brand - see above
+OFFERS
+1. offer - see above
+2. category - see above
+3. quantity - The number of units one must purchase to get the discount
+4. company - see above
+5. offervalue - The dollar value of the offer
+6. brand - see above
 
 .. sample
 offer,category,quantity,company,offervalue,brand
