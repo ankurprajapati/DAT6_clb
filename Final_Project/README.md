@@ -10,8 +10,6 @@ My project will be to predict which shoppers will become repeat buyers, using sh
 The objective is to create a model that predicts which shoppers will become repeat buyers.  Success will be measured in terms of precision, recall and predictive power. 
 
 ==================
-(Detailed project description below.)
-
 #### Analysis plan
 
 * Retrieve data — done
@@ -22,7 +20,6 @@ The objective is to create a model that predicts which shoppers will become repe
 * — How to test all of the different dimensions?  Anything other than “try them all”?
 * — Look at second-order dimensions?  (Derived variables:  things like purchase frequency could be calculated for each customer from their transaction history.)
 * — Evaluate precision, accuracy and predictive power of model.
-
 ==================
 
 
