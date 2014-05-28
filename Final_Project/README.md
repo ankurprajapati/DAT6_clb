@@ -12,16 +12,16 @@ The objective is to create a model that predicts which shoppers will become repe
 ==================
 (Detailed project description below.)
 
-Action items
+#### Analysis plan
 
 * Retrieve data — done
 * Visualize dimensions — in progress
 * Load transactions data (23 GB CSV file) into a database in order to access it
 * Identify correlations between dimensions
 * Build model to predict repeat buying (binary outcome)
-** How to test all of the different dimensions?  Anything other than “try them all”?
-** Look at second-order dimensions?  (Derived variables:  things like purchase frequency could be calculated for each customer from their transaction history.)
-** Evaluate precision, accuracy and predictive power of model.
+* — How to test all of the different dimensions?  Anything other than “try them all”?
+* — Look at second-order dimensions?  (Derived variables:  things like purchase frequency could be calculated for each customer from their transaction history.)
+* — Evaluate precision, accuracy and predictive power of model.
 
 ==================
 
