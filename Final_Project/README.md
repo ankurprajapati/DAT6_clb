@@ -19,7 +19,8 @@ The objective is to create a model that predicts which shoppers will become repe
 * Build model to predict repeat buying (binary outcome)
 * — How to test all of the different dimensions?  Anything other than “try them all”?
 * — Look at second-order dimensions?  (Derived variables:  things like purchase frequency could be calculated for each customer from their transaction history.)
-* — Evaluate precision, accuracy and predictive power of model.
+* — Evaluate precision, accuracy and predictive power of model
+
 ==================
 
 
