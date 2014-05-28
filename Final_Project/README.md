@@ -9,6 +9,23 @@ My project will be to predict which shoppers will become repeat buyers, using sh
 #### Objective
 The objective is to create a model that predicts which shoppers will become repeat buyers.  Success will be measured in terms of precision, recall and predictive power. 
 
+==================
+(Detailed project description below.)
+
+Action items
+
+* Retrieve data — done
+* Visualize dimensions — in progress
+* Load transactions data (23 GB CSV file) into a database in order to access it
+* Identify correlations between dimensions
+* Build model to predict repeat buying (binary outcome)
+** How to test all of the different dimensions?  Anything other than “try them all”?
+** Look at second-order dimensions?  (Derived variables:  things like purchase frequency could be calculated for each customer from their transaction history.)
+** Evaluate precision, accuracy and predictive power of model.
+
+==================
+
+
 #### Methods
 ##### Model.
 * Logistic regression.  The model will assign each user a probability of becoming a repeat buyer.  Initially, the model will be used to categorize each user as a target (bought product at least once) or non-target (did not buy product).  Depending on the data and the results, additional modeling to distinguish high versus low repeat buyers may be done. 
@@ -75,4 +92,3 @@ OFFERS
 6. brand - see above
 
 The transactions file can be joined to the history file by (id,chain). The history file can be joined to the offers file by (offer). The transactions file can be joined to the offers file by (category, brand, company). A negative value in productquantity and purchaseamount indicates a return.
-———————
